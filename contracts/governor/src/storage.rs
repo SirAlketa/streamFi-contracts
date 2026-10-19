@@ -148,6 +148,8 @@ pub enum DataKey {
     ProposalVoteSnapshot(u64),
     /// Receipt recording the voting weight cast by `(proposal_id, voter)` to prevent double-voting.
     VoterReceipt(u64, Address),
+    /// Minimum voting period in ledger sequences (~1 day = 17280 ledgers) (Issue #772).
+    VotingPeriodLedgers,
     /// Bytecode hash for proposal `u64` execution verification (Issue #774).
     /// Stored to enable on-chain verification that executed bytecode matches the proposal.
     ProposalExecutionBytecodeHash(u64),
