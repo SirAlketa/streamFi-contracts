@@ -65,4 +65,6 @@ pub enum Error {
     SaltAlreadyUsed = 32,
     /// `cancel_batch_streams` was called with duplicate stream addresses (Issue #787).
     DuplicateStreamId = 33,
+    /// The optional stream description exceeds 128 bytes (#845).
+    DescriptionTooLong = 34,
 }

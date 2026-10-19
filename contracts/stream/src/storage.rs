@@ -78,6 +78,8 @@ pub enum DataKey {
     /// Optional reference tag (e.g. invoice, order, or external ID).
     /// Allows sender to link the stream to external systems.
     ReferenceTag,
+    /// Optional human-readable description set at creation (#845).
+    StreamDescription,
 }
 
 /// Immutable stream configuration stored in instance storage for cheaper reads (Issue #702).
@@ -126,7 +128,6 @@ pub struct RateCheckpoint {
 pub struct StreamConfig {
     pub is_cancelable: bool,
 }
-
 
 /// Operational status of a stream.
 #[contracttype]

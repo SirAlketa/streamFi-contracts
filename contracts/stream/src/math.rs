@@ -132,7 +132,10 @@ mod tests {
     #[test]
     fn test_calculate_streamed_amount_normal_ranges() {
         assert_eq!(calculate_streamed_amount(10, 5).unwrap(), 50);
-        assert_eq!(calculate_streamed_amount(1_000_000, 3600).unwrap(), 3_600_000_000);
+        assert_eq!(
+            calculate_streamed_amount(1_000_000, 3600).unwrap(),
+            3_600_000_000
+        );
     }
 
     #[test]
@@ -148,7 +151,10 @@ mod tests {
 
         // Boundary division: half of i128::MAX
         let half_max = i128::MAX / 2;
-        assert_eq!(calculate_streamed_amount(half_max, 2).unwrap(), half_max * 2);
+        assert_eq!(
+            calculate_streamed_amount(half_max, 2).unwrap(),
+            half_max * 2
+        );
         assert_eq!(
             calculate_streamed_amount(half_max, 3),
             Err(Error::ArithmeticOverflow)
